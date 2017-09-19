@@ -12,7 +12,12 @@ import math
 x = float(input("Enter a number: "))
 z = float(input("Sqrt guess: "))
 
-print("Math.sqrt(x): " + str(math.sqrt(x))) # Accurate sqrt
+print("Math.sqrt(x): \t" + str(math.sqrt(x))) # Accurate sqrt
 
 approximate = z - ((z*z - x) / (2 * z))
-print("Approximate: " + str(approximate))
+
+for i in range (0,3):
+    z = approximate
+    approximate = z - ((z*z - x) / (2 * z))
+
+print("Approximate: \t" + str(approximate))
