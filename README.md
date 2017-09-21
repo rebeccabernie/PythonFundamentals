@@ -23,7 +23,6 @@ This program outputs all numbers 1 - 100 inclusive. If a number is divisible by 
 
 **4. Factorial**  
 The user enteres a number. The factorial of that number is calculated by multiplying it by every number preceding it and the result is printed to the screen.  
-*Not finished yet, working on the sum of digits in the factorial answer.*
 
 **5. Guessing Game**  
 The program generates a random number for the user to guess. The program tells the user if their guess was too high or too low, and tells them how many tries it took them when they get the number right. The program does not count multiple guesses of the same number.
@@ -44,7 +43,7 @@ The user enters a number and their guess for the square root of that number. The
 newApproximate = z - ((z* - x) / (2 * z))
 ```
 
-*Not finished yet, need to make float more accurate (import decimal?) and loop stop when value starts changing by tiny amount.*
+The program stops calculating a new approximate when the change in results between loops becomes less than 0.00000000001.
 
 **10. Reverse a String**  
 The user enters a word or sentence. The program reverses the string using both the easy, built in `str(word)[::-1]` function, and a written function that loops through the string to reverse it manually. Both results are the same.

@@ -7,17 +7,23 @@
 # x is the number you want to find the sqrt of
 # z is a guess at what the sqrt is?
 
+# Decimal functionality adapted from https://docs.python.org/2/library/decimal.html and https://stackoverflow.com/questions/35619309/how-to-increase-the-precision-of-float-values-to-more-than-10-in-python
+
 import math
+from decimal import *
+getcontext().prec = 15
 
-x = float(input("Enter a number: "))
-z = float(input("Sqrt guess: "))
+x = Decimal(input("Enter a number: "))
+z = Decimal(input("Sqrt guess: "))
 
-print("Math.sqrt(x): \t" + str(math.sqrt(x))) # Accurate sqrt
+print("Math.sqrt(x): \t\t" + str(Decimal(math.sqrt(x)))) # Accurate sqrt
 
 approximate = z - ((z*z - x) / (2 * z))
+difference = 1
 
-for i in range (0,3):
+while difference > 0.00000000001:
     z = approximate
     approximate = z - ((z*z - x) / (2 * z))
+    difference = z - approximate
 
-print("Approximate: \t" + str(approximate))
+print("Newton's Method: \t" + str(approximate))
