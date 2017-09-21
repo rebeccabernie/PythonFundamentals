@@ -30,3 +30,21 @@ The program generates a random number for the user to guess. The program tells t
 
 **6. Smallest and Largest in a List**  
 The user enters a list of 5 numbers, and the program calculates and prints the smallest and largest numbers in the list.
+
+**7. Palindrome Test**  
+The user enters a word (or sentence), and the program tests whether the string is a palindrome (i.e. the original and reverse of the word are spelled the same).
+
+**8. Merge Two Lists and Sort**  
+The user enters two lists containing three numbers each. The program merges the two lists into one, and sorts the new list from lowest to highest.
+
+**9. Newton's Square Root Method**  
+The user enters a number and their guess for the square root of that number. The program uses Newton's method to calculate the square root using the user's guess (z), the original number(x), and the new approximate(the equation result from the last iteration of the loop):
+
+```
+newApproximate = z - ((z* - x) / (2 * z))
+```
+
+*Not finished yet, need to make float more accurate (import decimal?) and loop stop when value starts changing by tiny amount.*
+
+**10. Reverse a String**  
+The user enters a word or sentence. The program reverses the string using both the easy, built in `str(word)[::-1]` function, and a written function that loops through the string to reverse it manually. Both results are the same.
