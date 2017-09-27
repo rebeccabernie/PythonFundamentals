@@ -7,8 +7,8 @@ numbers = []
 print("Please enter 5 numbers.")
 
 for i in range (0,5):
-    listItem = float(input(str(i + 1) + ": "))
-    numbers.append(listItem)
+    listItem = float(input(str(i + 1) + ": ")) # Get input from user
+    numbers.append(listItem) # Add item to array of numbers
 
 print(numbers) # Output the list
 

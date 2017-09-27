@@ -3,9 +3,9 @@
 
 print("Factorial & Digit Sum Calculator")
 f = input("Enter a number: ")
-n = 1 # start at 1
+n = 1 # start at 1 for each calculation
 
-for i in range(1, int(f) + 1): # start at 1, go to number + 1
+for i in range(1, int(f) + 1): # start at 1, go to number + 1 (will stop at number)
     n = n * i             # let answer = previous number times the current value of i, e.g 2 x 3, that answer x 4, so on
 
 def digitSum(n):

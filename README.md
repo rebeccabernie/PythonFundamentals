@@ -76,7 +76,14 @@ The user enters a number and their guess for the square root of that number. The
 newApproximate = z - ((z* - x) / (2 * z))
 ```
 
-The program stops calculating a new approximate when the change in results between loops becomes less than 0.00000000001.
+The program stops calculating a new approximate when the change in results between loops becomes less than 0.00000000001. Below is an output example.  
+
+```
+Enter a number: 77                                                           
+Sqrt guess: 9                                                                
+Math.sqrt(x):           8.7749643873921225889489505789242684841156005859375  
+Newton's Method:        8.77496438739212 (4 iterations)                      
+```
 
 **10. Reverse a String**  
 The user enters a word or sentence. The program reverses the string using both the easy, built in `str(word)[::-1]` function, and a written function that loops through the string to reverse it manually. Both results are the same.
