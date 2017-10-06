@@ -9,8 +9,9 @@
 The aim of these problems is to give you a good knowledge of basic Python. The problems are good for either learning Python from scratch or refreshing your memory of the language. They cover a variety of variable types, calculations, loops, user input, and in-built functions, among other things.
 
 ### Getting Set Up
-I'm using Python 3.6 (download [here](https://www.python.org/downloads/)),which is slightly different to Python 2.7. For example, Python 2.7 doesn't require parentheses in `print` statements, whereas 3.6 does - keep this in mind when running these programs. [Anaconda](https://www.anaconda.com/download/) is great for managing packages and libraries used in Python, so I'd recommend downloading that.  
+I'm using Python 3.6 (download [here](https://www.python.org/downloads/)), which is slightly different to Python 2.7. For example, Python 2.7 doesn't require parentheses in `print` statements, whereas 3.6 does - keep this in mind when running these programs. [Anaconda](https://www.anaconda.com/download/) is great for managing packages and libraries used in Python, so I'd recommend downloading that.  
 Once you have Python set up, open command line and `cd` to wherever you want to save the repository, type `git clone https://github.com/rebeccabernie/PythonFundamentals.git` and finally, `cd PythonFundamentals`. To run any program, type `python programname.py`.  
+  
 *If you're getting errors when trying to run a program, you may need to [add python to your path variable](https://docs.python.org/3.3/using/windows.html#configuring-python).*
 
 ## Exercises
@@ -73,7 +74,7 @@ The user enters a word (or sentence), and the program tests whether the string i
 The user enters two lists containing three numbers each. The program merges the two lists into one, and sorts the new list from lowest to highest.
 
 **9. Newton's Square Root Method**  
-The user enters a number and their guess for the square root of that number. The user can't enter any negative number for x () The program uses Newton's method to calculate the square root using the user's guess (z), the original number(x), and the new approximate(the equation result from the last iteration of the loop):
+The user enters a number and their guess for the square root of that number. The user can't enter any negative number for x *(not possible without going into complex / imaginary numbers etc)*, but can enter a negative number for their square root guess *(-2 x -2 = 4)*. The program uses Newton's method to calculate the square root using the user's guess (z), the original number(x), and the new approximate(the equation result from the last iteration of the loop):
 
 ```
 newApproximate = z - ((z* - x) / (2 * z))
