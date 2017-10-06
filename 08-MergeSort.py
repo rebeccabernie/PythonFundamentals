@@ -5,18 +5,30 @@
 list1 = []
 list2 = []
 newlist = []
+i = 0
 
 print("Please enter 3 numbers for each list.")
 
 print("List 1")
-for i in range (0,3):
-    listItem = float(input(str(i + 1) + ": "))
-    list1.append(listItem)
+while i < 3:
+    try:
+        listItem = float(input(str(i + 1) + ": "))
+        list1.append(listItem)
+        i = i + 1
+
+    except ValueError:
+        print("Please only enter number values, try again.")
 
 print("List 2")
-for i in range (0,3):
-    listItem = float(input(str(i + 1) + ": "))
-    list2.append(listItem)
+i = 0  # Reset i
+while i < 3:
+    try:
+        listItem = float(input(str(i + 1) + ": "))
+        list1.append(listItem)
+        i = i + 1
+    
+    except ValueError:
+        print("Please only enter number values, try again.")
 
 newList = list1 + list2
 

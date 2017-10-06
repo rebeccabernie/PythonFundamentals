@@ -8,23 +8,30 @@ print("Guess a number between 1 and 50.")
 secretNum = randint(0,50)
 # Generate random int adapted from https://stackoverflow.com/questions/3996904/generate-random-integers-between-0-and-9
 
-# Take input from the user and convert to int
-userGuess = int(input("Your guess: "))
-
 alreadyGuessed = []
+userGuess = 0
 
 # While guess is wrong, take more inputs
 while userGuess != secretNum:
-    if userGuess < secretNum: # If guess is too low, tell the user & ask for another input
-        print("Too low, try again.")
-        userGuess = int(input())
-        alreadyGuessed.append(userGuess) # Add the guess to an array
 
-    elif userGuess > secretNum: # If guess is too high, tell user & ask again
-        print("Too high, try again.")
-        userGuess = int(input())
-        alreadyGuessed.append(userGuess) # Add guess to array
+    # try except ValueError adapted from Python 3 docs -
+    # https://docs.python.org/3.3/tutorial/errors.html#handling-exceptions
+    try:
+        # Take input from the user and convert to int
+        userGuess = int(input("Your guess: "))
 
+        if userGuess < secretNum: # If guess is too low, tell the user & ask for another input
+            print("Too low, try again.")
+            #userGuess = int(input())
+            alreadyGuessed.append(userGuess) # Add the guess to an array
+
+        elif userGuess > secretNum: # If guess is too high, tell user & ask again
+            print("Too high, try again.")
+            #userGuess = int(input())
+            alreadyGuessed.append(userGuess) # Add guess to array
+    except ValueError:
+        print("Please enter only valid whole numbers.")
+        
 # If guess is right, tell user
 if userGuess == secretNum:
     print("You're right!")
