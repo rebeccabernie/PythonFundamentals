@@ -11,21 +11,48 @@
 
 import math
 from decimal import *
-getcontext().prec = 15
+getcontext().prec = 15 # Changing precision of answer, goes to 15 decimal points
 
-x = Decimal(input("Enter a number: "))
-z = Decimal(input("Sqrt guess: "))
+# Probably an easier way to error-handle this but it works.
+startZ = False  # Can't get z without getting x first
+start = False   # When user has correctly entered both x and z, start the rest
 
-print("Math.sqrt(x): \t\t" + str(Decimal(math.sqrt(x)))) # Accurate sqrt
+while startZ == False:
+    try:
+        x = float(input("Enter a number: "))
+        while x < 1:
+            print("Please enter a positive number!")
+            x = float(input())
+        startZ = True
 
+    except ValueError:
+        print("Please only enter number values, try again.")
+
+while start == False:
+    try:
+        z = float(input("Sqrt guess: "))
+        start = True
+    except ValueError:
+        print("Please only enter number values, try again.")
+
+# Print answer using built-in math.sqrt function
+# Convert to Decimal for more accuracy, also get the absolute values in case user entered negative num
+# Abs function adapted from https://www.tutorialspoint.com/python/number_abs.htm
+print("Math.sqrt(x): \t\t" + str(Decimal(math.sqrt(abs(x))))) # Accurate sqrt
+
+# Convert x and z to Decimals
+x = Decimal(abs(x))
+z = Decimal(abs(z))
+
+# Do the first calculation
 approximate = z - ((z*z - x) / (2 * z))
-difference = 1
-count = 1 # Calculation done once
+difference = 1  # Init the difference in answers at 1 - if init at 0, while loop won't run
+count = 1 # Calculation already done once
 
 while difference > 0.00000000001:
-    z = approximate
+    z = approximate # set new z to be last answer
     approximate = z - ((z*z - x) / (2 * z))
-    difference = z - approximate
+    difference = z - approximate  # Keep track of difference between z and approx
     count = count + 1
 
 print("Newton's Method: \t" + str(approximate) + " (" + str(count) + " iterations)")
